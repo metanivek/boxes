@@ -40,6 +40,7 @@
       k9s
       kubectl
       kubernetes-helm
+      mise
       neovim
       ranger
       ripgrep
@@ -62,7 +63,10 @@
       upgrade = false;
       cleanup = "zap";
     };
-    taps = [ "d12frosted/emacs-plus" ];
+    taps = [
+      "d12frosted/emacs-plus"
+      "homebrew/services"
+    ];
     brews = [
       "antidote"
       "ca-certificates"
@@ -90,7 +94,10 @@
     home.stateVersion = "24.05";
   };
 
-  services.nix-daemon.enable = true;
+  services = {
+    nix-daemon.enable = true;
+    lorri.enable = true;
+  };
 
   nix = {
     package = pkgs.nix;

@@ -18,7 +18,8 @@ let
   };
 in
 {
-  MBPBrilliant =
+  # work mbp
+  koji =
     let
       inherit (systemConfig "aarch64-darwin") system pkgs;
     in

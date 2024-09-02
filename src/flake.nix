@@ -23,7 +23,7 @@
         user = "metanivek";
         location = "$HOME/.boxes";
         terminal = "alacritty";
-        editor = "emacs";
+        editor = "vim";
       };
     in
 
