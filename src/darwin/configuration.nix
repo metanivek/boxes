@@ -93,6 +93,7 @@
       "antidote"
       "ca-certificates"
       "emacs-plus@29"
+      "libtool"
       "pinentry-mac"
       "python@3.11"
     ];
