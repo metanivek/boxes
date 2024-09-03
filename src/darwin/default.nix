@@ -3,7 +3,6 @@
   nixpkgs,
   nix-darwin,
   home-manager,
-  # nixvim,
   vars,
   ...
 }:
@@ -25,6 +24,7 @@ in
     in
     nix-darwin.lib.darwinSystem {
       inherit system;
+
       specialArgs = {
         inherit
           inputs
@@ -33,10 +33,9 @@ in
           vars
           ;
       };
+
       modules = [
         ./configuration.nix
-
-        # nixvim.nixDarwinModules.nixvim
 
         home-manager.darwinModules.home-manager
         {
