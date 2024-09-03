@@ -159,8 +159,17 @@
         showhidden = false;
         show-recents = false;
         tilesize = 44;
+        wvous-bl-corner = 3; # application windows
+        wvous-br-corner = 2; # mission control
+        wvous-tl-corner = 4; # desktop
+        wvous-tr-corner = 12; # notification center
       };
+
       finder = {
+        AppleShowAllExtensions = true;
+        CreateDesktop = false; # no icons on desktop
+        FXDefaultSearchScope = "SCcf"; # search current folder
+        FXPreferredViewStyle = "clmv"; # column view
         ShowPathbar = false;
         ShowStatusBar = true;
       };
@@ -168,11 +177,9 @@
       CustomUserPreferences = {
         # Settings of plist in ~/Library/Preferences/
         "com.apple.finder" = {
-          # Set home directory as startup window
+          # Set home directory as startup window and new window target
           NewWindowTargetPath = "file:///Users/${vars.user}/";
           NewWindowTarget = "PfHm";
-          # Set search scope to directory
-          FXDefaultSearchScope = "SCcf";
           # Multi-file tab view
           FinderSpawnTab = true;
         };
