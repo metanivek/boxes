@@ -25,17 +25,22 @@
             env = [ ];
             commands = [
               {
-                package = "nixfmt-rfc-style";
-                category = "Formatters";
-              }
-              {
-                name = "lock";
-                category = "Utils";
-                help = "Generates flake.lock";
-                command = "nix flake lock";
+                name = "mac-update";
+                command = ''
+                  if [ $# -lt 1 ]; then
+                    echo 1>&2 "Config name missing"
+                    exit 2
+                  fi
+
+                  darwin-rebuild switch --flake ./src#$1 --show-trace
+                '';
+                help = "mac-update <name-of-config>";
               }
             ];
-            packages = with pkgs; [ nil ];
+            packages = with pkgs; [
+              nixfmt-rfc-style
+              nil
+            ];
           };
         };
     };
