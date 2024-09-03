@@ -1,7 +1,20 @@
-{ pkgs, vars, ... }:
+{
+  pkgs,
+  config,
+  hostPlatform,
+  vars,
+  ...
+}:
 
 {
   # imports = (import ./modules);
+
+  nixpkgs = {
+    inherit hostPlatform;
+    config = {
+      allowUnfree = true;
+    };
+  };
 
   users.users.${vars.user} = {
     home = "/Users/${vars.user}";
@@ -116,7 +129,7 @@
     # $ darwin-rebuild changelog
     stateVersion = 4;
 
-    # Set Git commit hash for darwin-version.
+    # Use git commit hash
     configurationRevision = vars.rev;
 
     defaults = {
@@ -126,6 +139,7 @@
         NSAutomaticSpellingCorrectionEnabled = false;
         "com.apple.trackpad.enableSecondaryClick" = true;
       };
+
       dock = {
         autohide = true;
         magnification = false;
