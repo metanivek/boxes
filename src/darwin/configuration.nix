@@ -83,7 +83,7 @@
       # handle updates/upgrades with brew outside of nix
       autoUpdate = false;
       upgrade = false;
-      cleanup = "zap";
+      cleanup = "none"; # "zap"
     };
     taps = [
       "d12frosted/emacs-plus"
