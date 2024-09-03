@@ -64,6 +64,15 @@
       z-lua
       # zsh-powerlevel10k
     ];
+
+    # store list of installed packages for quick reference
+    etc."current-system-packages".text =
+      let
+        packages = builtins.map (p: "${p.name}") config.environment.systemPackages;
+        sortedUnique = builtins.sort builtins.lessThan (pkgs.lib.lists.unique packages);
+        formatted = builtins.concatStringsSep "\n" sortedUnique;
+      in
+      formatted;
   };
 
   programs.zsh.enable = true;
