@@ -27,7 +27,6 @@
       VISUAL = "${vars.editor}";
     };
     systemPackages = with pkgs; [
-      # antidote # need to figure out how to hook into .zshrc
       aspell
       bat
       colima
@@ -61,8 +60,6 @@
       sops
       tmux
       tree-sitter
-      z-lua
-      # zsh-powerlevel10k
     ];
 
     # store list of installed packages for quick reference
@@ -76,6 +73,7 @@
   };
 
   programs.zsh.enable = true;
+  environment.shells = [ pkgs.zsh ];
 
   homebrew = {
     enable = true;
@@ -90,7 +88,6 @@
       "homebrew/services"
     ];
     brews = [
-      "antidote"
       "ca-certificates"
       "emacs-plus@29"
       "libtool"
@@ -111,10 +108,6 @@
     masApps = {
       "Xcode" = 497799835;
     };
-  };
-
-  home-manager.users.${vars.user} = {
-    home.stateVersion = "24.05";
   };
 
   services = {
