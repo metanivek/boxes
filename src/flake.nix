@@ -19,7 +19,7 @@
     }:
     let
       vars = {
-        rev = self.rev or self.dirtyRev or null;
+        rev = self.rev or self.dirtyRev or "dirty";
         user = "metanivek";
         location = "$HOME/.boxes";
         terminal = "alacritty";
@@ -47,7 +47,5 @@
           }
         );
       };
-
-      # perSystem = { config, pkgs, ... } { };
     };
 }

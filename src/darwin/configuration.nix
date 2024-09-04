@@ -7,8 +7,6 @@
 }:
 
 {
-  # imports = (import ./modules);
-
   nixpkgs = {
     inherit hostPlatform;
     config = {
@@ -61,9 +59,11 @@
       tmux
       tree-sitter
     ];
+  };
 
+  environment.etc = {
     # store list of installed packages for quick reference
-    etc."current-system-packages".text =
+    "current-system-packages".text =
       let
         packages = builtins.map (p: "${p.name}") config.environment.systemPackages;
         sortedUnique = builtins.sort builtins.lessThan (pkgs.lib.lists.unique packages);
@@ -72,6 +72,7 @@
       formatted;
   };
 
+  programs.bash.enable = true;
   programs.zsh.enable = true;
   environment.shells = [ pkgs.zsh ];
 
@@ -128,7 +129,7 @@
   };
 
   system = {
-    # Used for backwards compatibility, please read the changelog before changing.
+    # Used for backwards compatibility, check changelog before changing.
     # $ darwin-rebuild changelog
     stateVersion = 4;
 
@@ -168,7 +169,6 @@
       };
 
       CustomUserPreferences = {
-        # Settings of plist in ~/Library/Preferences/
         "com.apple.finder" = {
           # Set home directory as startup window and new window target
           NewWindowTargetPath = "file:///Users/${vars.user}/";
@@ -181,9 +181,6 @@
           DSDontWriteNetworkStores = true;
           DSDontWriteUSBStores = true;
         };
-        # Do not show battery percentage
-        "~/Library/Preferences/ByHost/com.apple.controlcenter".BatteryShowPercentage = false;
-        # Privacy
         "com.apple.AdLib".allowApplePersonalizedAdvertising = false;
       };
     };

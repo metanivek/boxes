@@ -6,10 +6,7 @@
 }:
 
 {
-
-  # work mbp
   koji = nix-darwin.lib.darwinSystem {
-    # arguments to pass to modules
     specialArgs = {
       hostPlatform = "aarch64-darwin";
       shellExtra = ''
