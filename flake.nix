@@ -2,11 +2,17 @@
   description = "📦";
 
   inputs = {
-    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/*.tar.gz";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     flake-parts.url = "github:hercules-ci/flake-parts";
-    home-manager.url = "github:nix-community/home-manager";
-    nix-darwin.url = "github:lnl7/nix-darwin";
     devshell.url = "github:numtide/devshell";
+    home-manager = {
+      url = "github:nix-community/home-manager/release-24.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-darwin = {
+      url = "github:lnl7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -14,6 +20,7 @@
       self,
       flake-parts,
       nixpkgs,
+      devshell,
       ...
     }:
 
@@ -30,12 +37,17 @@
         "aarch64-darwin"
       ];
 
-      imports = [ inputs.devshell.flakeModule ];
+      imports = [ devshell.flakeModule ];
 
       perSystem =
-        { config, pkgs, ... }:
         {
-          devshells.default = import ./devshell.nix;
+          config,
+          pkgs,
+          lib,
+          ...
+        }:
+        {
+          devshells.default = lib.importTOML ./devshell.toml;
         };
 
       flake = {

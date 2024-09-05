@@ -1,0 +1,12 @@
+[devshell]
+name = "📦"
+
+packages = [
+  "nixfmt-rfc-style",
+  "nil"
+]
+
+[[commands]]
+name = "mac-rebuild"
+command = "darwin-rebuild switch --flake . --show-trace"
+

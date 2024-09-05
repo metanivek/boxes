@@ -101,7 +101,7 @@
   };
 
   home-manager.useGlobalPkgs = true;
-  home-manager.useUserPackages = false;
+  home-manager.useUserPackages = true;
   home-manager.verbose = true;
   home-manager.backupFileExtension = "backup";
 }
