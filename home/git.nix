@@ -1,6 +1,9 @@
 { pkgs, ... }:
 {
-  home.packages = with pkgs; [ delta ];
+  home.packages = with pkgs; [
+    delta
+    git-absorb
+  ];
   programs.git = {
     enable = true;
     userName = "Kevin Smith";

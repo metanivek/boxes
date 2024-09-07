@@ -4,40 +4,24 @@
     imports = [
       ./alacritty.nix
       ./aliases.nix
+      ./bat.nix
+      ./direnv.nix
+      ./eza.nix
       ./fzf.nix
       ./git.nix
+      ./gpg.nix
+      ./mise.nix
+      ./ripgrep.nix
       ./sessionVariables.nix
       ./starship.nix
       ./ssh.nix
       ./tmux.nix
+      ./zoxide.nix
       ./zsh.nix
     ];
 
     home.stateVersion = "24.05";
-
     programs.home-manager.enable = true;
-
-    programs.direnv = {
-      enable = true;
-      nix-direnv.enable = true;
-    };
-
-    programs.eza.enable = true;
-
-    programs.gpg.enable = true;
-
-    programs.mise = {
-      enable = true;
-      globalConfig = {
-        tools = {
-          node = "20";
-          python = "latest";
-          go = "latest";
-        };
-      };
-    };
-
-    programs.zoxide.enable = true;
   };
 
   home-manager.useGlobalPkgs = true;

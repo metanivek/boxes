@@ -14,37 +14,26 @@
 
   environment.systemPackages = with pkgs; [
     aspell
-    bat
     colima
     cmake
-    direnv
     docker
     docker-compose
     dust
     editorconfig-core-c
     gawk
-    eza
     fd
     flyctl
     fswatch
-    fzf
-    git
-    git-absorb
-    git-lfs
-    gnupg
     graphviz
     jq
     just
     k9s
     kubectl
     kubernetes-helm
-    mise
     neovim
     ranger
-    ripgrep
     shellcheck
     sops
-    tmux
     tree-sitter
   ];
 
