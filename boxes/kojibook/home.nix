@@ -29,6 +29,19 @@
       postgres = "14.10";
     };
 
+    programs.git = {
+      signing.key = "95543858";
+      includes = [
+        {
+          contents.user = {
+            email = "kevin.smith@brilliant.org";
+            signingKey = "4AD405B2E937FB58";
+          };
+          condition = "gitdir:~/b/";
+        }
+      ];
+    };
+
     home.file.".gnupg/gpg-agent.conf".text = ''
       pinentry-program /opt/homebrew/bin/pinentry-mac
     '';

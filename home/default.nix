@@ -4,6 +4,7 @@
     imports = [
       ./aliases.nix
       ./fzf.nix
+      ./git.nix
       ./sessionVariables.nix
       ./starship.nix
       ./tmux.nix
