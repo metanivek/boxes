@@ -2,6 +2,7 @@
 {
   home-manager.users.${username} = {
     imports = [
+      ./alacritty.nix
       ./aliases.nix
       ./fzf.nix
       ./git.nix
