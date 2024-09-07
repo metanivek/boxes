@@ -7,6 +7,7 @@
       ./git.nix
       ./sessionVariables.nix
       ./starship.nix
+      ./ssh.nix
       ./tmux.nix
       ./zsh.nix
     ];

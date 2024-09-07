@@ -42,6 +42,10 @@
       ];
     };
 
+    programs.ssh = {
+      includes = [ "~/.colima/ssh_config" ];
+    };
+
     home.file.".gnupg/gpg-agent.conf".text = ''
       pinentry-program /opt/homebrew/bin/pinentry-mac
     '';
