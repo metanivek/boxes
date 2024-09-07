@@ -24,11 +24,6 @@
 
     programs.eza.enable = true;
 
-    programs.go = {
-      enable = true;
-      goPath = "go";
-    };
-
     programs.gpg.enable = true;
 
     programs.mise = {
