@@ -19,17 +19,14 @@
     inputs@{
       self,
       flake-parts,
+      home-manager,
       nixpkgs,
       devshell,
       ...
     }:
 
     let
-      vars = {
-        rev = self.rev or self.dirtyRev or "dirty";
-        user = "metanivek";
-        editor = "vim";
-      };
+      rev = self.rev or self.dirtyRev or "dirty";
     in
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [
@@ -52,10 +49,10 @@
 
       flake = {
         darwinConfigurations = {
-          kojibook = import ./hosts/kojibook {
+          kojibook = import ./boxes/kojibook {
             inherit (nixpkgs) lib;
             inherit (inputs) home-manager nix-darwin;
-            inherit vars;
+            inherit rev;
           };
         };
       };

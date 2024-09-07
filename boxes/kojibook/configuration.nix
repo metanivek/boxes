@@ -1,65 +1,52 @@
 {
   pkgs,
   config,
-  hostPlatform,
-  vars,
+  username,
   ...
 }:
-
 {
-  nixpkgs = {
-    inherit hostPlatform;
-    config = {
-      allowUnfree = true;
-    };
-  };
+  nixpkgs.config.allowUnfree = true;
 
-  users.users.${vars.user} = {
-    home = "/Users/${vars.user}";
+  users.users.${username} = {
+    home = "/Users/${username}";
     shell = pkgs.zsh;
   };
 
-  environment = {
-    variables = {
-      EDITOR = "${vars.editor}";
-      VISUAL = "${vars.editor}";
-    };
-    systemPackages = with pkgs; [
-      aspell
-      bat
-      colima
-      cmake
-      direnv
-      docker
-      docker-compose
-      dust
-      editorconfig-core-c
-      gawk
-      eza
-      fd
-      flyctl
-      fswatch
-      fzf
-      git
-      git-absorb
-      git-lfs
-      gnupg
-      graphviz
-      jq
-      just
-      k9s
-      kubectl
-      kubernetes-helm
-      mise
-      neovim
-      ranger
-      ripgrep
-      shellcheck
-      sops
-      tmux
-      tree-sitter
-    ];
-  };
+  environment.systemPackages = with pkgs; [
+    aspell
+    bat
+    colima
+    cmake
+    direnv
+    docker
+    docker-compose
+    dust
+    editorconfig-core-c
+    gawk
+    eza
+    fd
+    flyctl
+    fswatch
+    fzf
+    git
+    git-absorb
+    git-lfs
+    gnupg
+    graphviz
+    jq
+    just
+    k9s
+    kubectl
+    kubernetes-helm
+    mise
+    neovim
+    ranger
+    ripgrep
+    shellcheck
+    sops
+    tmux
+    tree-sitter
+  ];
 
   environment.etc = {
     # store list of installed packages for quick reference
@@ -89,11 +76,12 @@
       "homebrew/services"
     ];
     brews = [
-      "ca-certificates"
+      # TODO can i manage emacs with nix?
       "emacs-plus@29"
+      # libtool is required to build vterm in emacs
+      # TODO figure out how to manage this with nix
       "libtool"
       "pinentry-mac"
-      "python@3.11"
     ];
     casks = [
       "1password-cli"
@@ -120,8 +108,8 @@
     package = pkgs.nix;
     gc = {
       automatic = true;
-      interval.Day = 7;
-      options = "--delete-older-than 7d";
+      interval.Day = 1;
+      options = "--delete-older-than 1d";
     };
     extraOptions = ''
       experimental-features = nix-command flakes
@@ -132,9 +120,6 @@
     # Used for backwards compatibility, check changelog before changing.
     # $ darwin-rebuild changelog
     stateVersion = 4;
-
-    # Use git commit hash
-    configurationRevision = vars.rev;
 
     defaults = {
       NSGlobalDomain = {
@@ -171,7 +156,7 @@
       CustomUserPreferences = {
         "com.apple.finder" = {
           # Set home directory as startup window and new window target
-          NewWindowTargetPath = "file:///Users/${vars.user}/";
+          NewWindowTargetPath = "file:///Users/${username}/";
           NewWindowTarget = "PfHm";
           # Multi-file tab view
           FinderSpawnTab = true;
