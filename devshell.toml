@@ -9,4 +9,9 @@ packages = [
 [[commands]]
 name = "mac-rebuild"
 command = "darwin-rebuild switch --flake . --show-trace"
+help = "rebuild darwin system"
 
+[[commands]]
+name = "home-rebuild"
+command = "home-manager switch --flake . --show-trace --verbose"
+help = "rebuild home"

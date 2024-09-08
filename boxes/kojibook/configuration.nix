@@ -5,8 +5,6 @@
   ...
 }:
 {
-  nixpkgs.config.allowUnfree = true;
-
   users.users.${username} = {
     home = "/Users/${username}";
     shell = pkgs.zsh;
@@ -25,6 +23,7 @@
     flyctl
     fswatch
     graphviz
+    home-manager
     jq
     just
     k9s
