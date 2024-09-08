@@ -51,15 +51,5 @@
         inherit inputs;
         inherit rev;
       };
-
-      # flake = {
-      #   darwinConfigurations = {
-      #     kojibook = import ./boxes/kojibook {
-      #       inherit (nixpkgs) lib;
-      #       inherit (inputs) home-manager nix-darwin;
-      #       inherit rev;
-      #     };
-      #   };
-      # };
     };
 }
