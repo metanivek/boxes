@@ -6,7 +6,7 @@
     enable = true;
 
     settings = {
-      import = [ "${pkgs.alacritty-theme}/catppuccin_mocha.toml" ];
+      import = [ "${pkgs.alacritty-theme}/catppuccin_macchiato.toml" ];
 
       working_directory = config.home.homeDirectory;
 
@@ -35,8 +35,8 @@
         };
 
         padding = {
-          x = 0;
-          y = 0;
+          x = 16;
+          y = 16;
         };
       };
     };

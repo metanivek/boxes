@@ -4,6 +4,7 @@
     enable = true;
     tmuxp.enable = true;
     prefix = "C-Space";
+    aggressiveResize = true;
     keyMode = "vi";
     baseIndex = 1;
     clock24 = true;
@@ -11,25 +12,43 @@
     historyLimit = 100000;
     sensibleOnTop = false;
     terminal = "tmux-256color";
-    plugins = with pkgs; [ tmuxPlugins.extrakto ];
+    plugins = with pkgs.tmuxPlugins; [
+      {
+        plugin = catppuccin;
+        extraConfig = ''
+          set -g @catppuccin_flavour "macchiato" # latte,frappe, macchiato or mocha
+          set -g @catppuccin_status_modules_left "null"
+
+          set -g @catppuccin_window_left_separator ""
+          set -g @catppuccin_window_right_separator " "
+          set -g @catppuccin_window_middle_separator " "
+          set -g @catppuccin_window_number_position "right"
+
+          set -g @catppuccin_window_default_fill "none"
+          set -g @catppuccin_window_current_fill "all"
+
+          set -g @catppuccin_status_modules_right "application session date_time"
+          set -g @catppuccin_date_time_text "%m-%d %H:%M"
+          set -g @catppuccin_status_left_separator  " "
+          set -g @catppuccin_status_right_separator ""
+          set -g @catppuccin_status_fill "icon"
+          set -g @catppuccin_status_connect_separator "no"
+        '';
+      }
+      extrakto
+    ];
     extraConfig = ''
       # --------------------------------- #
       # extra config                      #
       # --------------------------------- #
 
+      # colors / cursor
       set -ga terminal-overrides ",*256col*:Tc"
       set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q'
       set-environment -g COLORTERM "truecolor"
 
+      # status bar
       set-option -g status-position bottom
-      set-option -g status-style "bg=color0,fg=color7"
-      set-window-option -g window-status-current-style "bg=color6,fg=color0"
-      set-option -g pane-border-style "fg=color0,bg=color0"
-      set-option -g pane-active-border-style "fg=color7,bg=color0"
-      set -g window-status-format " #I #W "
-      set -g window-status-current-format " #I #W* "
-      set -g status-left ' '
-      set -g status-right ' %H:%M '
 
       # reload
       unbind r
