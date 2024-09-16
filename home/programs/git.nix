@@ -10,6 +10,11 @@
     userEmail = "metanivek@gmail.com";
     lfs.enable = true;
     signing.signByDefault = true;
+    ignores = [
+      ".envrc"
+      "*.local"
+      ".DS_Store"
+    ];
     extraConfig = {
       color.ui = "auto";
       branch.sort = "-committerdate";

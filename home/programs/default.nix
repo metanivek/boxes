@@ -8,6 +8,7 @@
     ./git.nix
     ./gpg.nix
     ./mise.nix
+    ./nvim
     ./ripgrep.nix
     ./starship.nix
     ./ssh.nix

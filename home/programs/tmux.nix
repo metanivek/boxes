@@ -4,6 +4,7 @@
     enable = true;
     tmuxp.enable = true;
     prefix = "C-Space";
+    escapeTime = 10;
     aggressiveResize = true;
     keyMode = "vi";
     baseIndex = 1;
@@ -14,26 +15,23 @@
     terminal = "tmux-256color";
     plugins = with pkgs.tmuxPlugins; [
       {
-        plugin = catppuccin;
+        plugin = mkTmuxPlugin {
+          pluginName = "kanagawa";
+          version = "unstable-2024-07-06";
+          src = pkgs.fetchFromGitHub {
+            owner = "Nybkox";
+            repo = "tmux-kanagawa";
+            rev = "fc95d797ba24536bffe3f2b2101e7d7ec3e5aaa1";
+            sha256 = "1d00hhsjv8s00f5a722xpbvzs9780zp55hqzkc0fkapvnig2la5w";
+          };
+        };
         extraConfig = ''
-          set -g @catppuccin_flavour "macchiato" # latte,frappe, macchiato or mocha
-          set -g @catppuccin_status_background "default"
-          set -g @catppuccin_status_modules_left "null"
-          set -g @catppuccin_status_justify "left"
-
-          set -g @catppuccin_window_number_position "left"
-          set -g @catppuccin_window_right_separator "█ "
-          set -g @catppuccin_window_middle_separator ". "
-
-          set -g @catppuccin_window_default_fill "none"
-          set -g @catppuccin_window_current_fill "all"
-
-          set -g @catppuccin_status_modules_right "date_time"
-          set -g @catppuccin_date_time_text "%H:%M"
-          set -g @catppuccin_status_left_separator  "█"
-          set -g @catppuccin_status_right_separator ""
-          set -g @catppuccin_status_fill "icon"
-          set -g @catppuccin_status_connect_separator "no"
+          set -g @kanagawa-left-icon session
+          set -g @kanagawa-show-flags true
+          set -g @kanagawa-show-location false
+          set -g @kanagawa-time-format "%H:%M"
+          set -g @kanagawa-plugins "battery cpu time"
+          set -g @kanagawa-show-powerline true
         '';
       }
       extrakto
