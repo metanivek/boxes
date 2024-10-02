@@ -19,6 +19,7 @@
     dust
     editorconfig-core-c
     gawk
+    gh
     fd
     flyctl
     fswatch
@@ -81,6 +82,8 @@
       "hiddenbar"
       "iterm2"
       "raycast"
+      "swiftbar"
+      "wezterm"
     ];
     masApps = {
       "Xcode" = 497799835;

@@ -34,6 +34,12 @@
           set -g @kanagawa-show-powerline true
         '';
       }
+      {
+        plugin = session-wizard;
+        extraConfig = ''
+          set -g @session-wizard S
+        '';
+      }
       extrakto
     ];
     extraConfig = ''
