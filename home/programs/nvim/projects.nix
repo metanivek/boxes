@@ -19,6 +19,11 @@
             require("telescope").extensions.projects.projects({})
           end
         '';
+        options = {
+          noremap = true;
+          silent = true;
+          desc = "Switch project";
+        };
       }
     ];
   };

@@ -2,14 +2,42 @@
   programs.nixvim = {
     plugins.gitsigns.enable = true;
 
+    plugins.gitblame = {
+      enable = true;
+      settings = {
+        enabled = false;
+      };
+    };
+
     plugins.neogit = {
       enable = true;
       settings = {
-        kind = "floating";
-        commit_popup.kind = "floating";
-        preview_buffer.kind = "floating";
-        popup.kind = "floating";
+        kind = "replace";
+        commit_popup.kind = "replace";
+        preview_buffer.kind = "replace";
+        popup.kind = "replace";
       };
     };
+
+    keymaps = [
+      {
+        key = "<leader>gB";
+        action = "<cmd>GitBlameToggle<cr>";
+        options = {
+          noremap = true;
+          silent = true;
+          desc = "Toggle git blame";
+        };
+      }
+      {
+        key = "<leader>gg";
+        action = "<cmd>Neogit<cr>";
+        options = {
+          noremap = true;
+          silent = true;
+          desc = "Open Neogit";
+        };
+      }
+    ];
   };
 }

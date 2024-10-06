@@ -10,6 +10,7 @@
         gleam.enable = true;
         gopls.enable = true;
         graphql.enable = true;
+        hls.enable = true;
         jsonls.enable = true;
         marksman.enable = true;
         nil-ls = {
@@ -17,6 +18,7 @@
           settings.formatting.command = [ "nixfmt" ];
         };
         lua-ls.enable = true;
+        ocamllsp.enable = true;
         pyright.enable = true;
         tsserver.enable = true;
         ruff-lsp.enable = true;
@@ -45,6 +47,14 @@
           end
         -- }}}
       '';
+    };
+
+    plugins.telescope.keymaps = {
+      "<leader>cS" = "lsp_document_symbols";
+      "<leader>ci" = "lsp_implementations";
+      "<leader>cD" = "lsp_definitions";
+      "<leader>ct" = "lsp_type_definitions";
+      "<leader>pS" = "lsp_workspace_symbols";
     };
 
     plugins.lsp-format = {

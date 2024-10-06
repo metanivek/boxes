@@ -62,7 +62,7 @@ let
     # buffer mgmt
     {
       key = "<leader>bk";
-      action = "<cmd>bd<cr>";
+      action = "<cmd>Bdelete<cr>";
       desc = "Close buffer";
     }
     {

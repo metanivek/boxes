@@ -45,10 +45,41 @@
         "<leader>pf" = "find_files";
         "<leader>bb" = "buffers";
         "<leader>kk" = "commands";
-        "<leader>cS" = "lsp_document_symbols";
         "<leader>cd" = "diagnostics";
-        "<leader>pS" = "lsp_workspace_symbols";
       };
     };
+
+    keymaps = [
+      {
+        key = "<leader>sd";
+        action.__raw = ''
+          function()
+            local cwd = vim.fn.expand("%:h")
+            require("telescope.builtin").live_grep({cwd = cwd})
+          end
+        '';
+        mode = "n";
+        options = {
+          noremap = true;
+          silent = true;
+          desc = "Search current directory";
+        };
+      }
+      {
+        key = "<leader>fd";
+        action.__raw = ''
+          function()
+            local cwd = vim.fn.expand("%:h")
+            require("telescope.builtin").find_files({cwd = cwd})
+          end
+        '';
+        mode = "n";
+        options = {
+          noremap = true;
+          silent = true;
+          desc = "Find files in current directory";
+        };
+      }
+    ];
   };
 }

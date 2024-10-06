@@ -25,9 +25,14 @@
       enable = true;
       theme = "startify";
     };
+    plugins.bufdelete.enable = true;
     plugins.comment.enable = true;
     plugins.surround.enable = true;
     plugins.zen-mode.enable = true;
+    plugins.harpoon = {
+      enable = true;
+      enableTelescope = true;
+    };
 
     opts = {
       autoindent = true;
@@ -38,6 +43,7 @@
       completeopt = "menuone,noselect";
       conceallevel = 0;
       cmdheight = 0;
+      cursorline = true;
       expandtab = true;
       fileencodings = "utf-8";
       hlsearch = true;
@@ -45,7 +51,7 @@
       inccommand = "split";
       linebreak = true;
       number = true;
-      numberwidth = 3;
+      numberwidth = 2;
       relativenumber = true;
       # scrolloff = 999;
       shiftwidth = 2;
