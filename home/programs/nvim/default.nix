@@ -27,7 +27,8 @@
     };
     plugins.bufdelete.enable = true;
     plugins.comment.enable = true;
-    plugins.surround.enable = true;
+    plugins.vim-surround.enable = true;
+    plugins.web-devicons.enable = true;
     plugins.zen-mode.enable = true;
     plugins.harpoon = {
       enable = true;

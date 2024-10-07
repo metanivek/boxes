@@ -20,7 +20,7 @@
         lua-ls.enable = true;
         ocamllsp.enable = true;
         pyright.enable = true;
-        tsserver.enable = true;
+        ts-ls.enable = true;
         ruff-lsp.enable = true;
         rust-analyzer = {
           enable = true;
