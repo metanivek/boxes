@@ -53,6 +53,21 @@ let
       action = "<C-W>l";
       desc = "Focus window right";
     }
+    {
+      key = "<leader>wo";
+      action = "<C-W>|";
+      desc = "Max width";
+    }
+    {
+      key = "<leader>wO";
+      action = "<C-W>_";
+      desc = "Max height";
+    }
+    {
+      key = "<leader>w=";
+      action = "<C-W>=";
+      desc = "Equal spacing";
+    }
     # directory hopping
     {
       key = "<leader>.";

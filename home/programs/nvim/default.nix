@@ -27,13 +27,14 @@
     };
     plugins.bufdelete.enable = true;
     plugins.comment.enable = true;
+    plugins.cursorline = {
+      enable = true;
+      cursorline.timeout = 0;
+    };
+    plugins.marks.enable = true;
     plugins.vim-surround.enable = true;
     plugins.web-devicons.enable = true;
     plugins.zen-mode.enable = true;
-    plugins.harpoon = {
-      enable = true;
-      enableTelescope = true;
-    };
 
     opts = {
       autoindent = true;
@@ -44,7 +45,6 @@
       completeopt = "menuone,noselect";
       conceallevel = 0;
       cmdheight = 0;
-      cursorline = true;
       expandtab = true;
       fileencodings = "utf-8";
       hlsearch = true;

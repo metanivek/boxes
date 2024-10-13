@@ -9,6 +9,11 @@
       };
     };
 
+    plugins.gitmessenger = {
+      enable = true;
+      includeDiff = "current";
+    };
+
     plugins.neogit = {
       enable = true;
       settings = {

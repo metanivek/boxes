@@ -64,5 +64,21 @@
     plugins.none-ls = {
       enable = true;
     };
+
+    keymaps = [
+      {
+        key = "<leader>od";
+        action.__raw = ''
+          function ()
+            vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+          end
+        '';
+        options = {
+          noremap = true;
+          silent = true;
+          desc = "Toggle diagnostics";
+        };
+      }
+    ];
   };
 }
