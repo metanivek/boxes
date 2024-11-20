@@ -6,7 +6,8 @@
     enable = true;
 
     settings = {
-      import = [ "${pkgs.alacritty-theme}/kanagawa_wave.toml" ];
+      # import = [ "${pkgs.alacritty-theme}/kanagawa_wave.toml" ];
+      import = [ "${pkgs.alacritty-theme}/tomorrow_night_bright.toml" ];
 
       working_directory = config.home.homeDirectory;
 
@@ -17,6 +18,7 @@
       font = {
         size = 14;
         normal = {
+          # family = "Iosevka Nerd Font Mono";
           family = "FiraCode Nerd Font Mono";
         };
       };

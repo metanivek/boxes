@@ -79,6 +79,7 @@
       "font-fira-code"
       "font-fira-code-nerd-font"
       "font-hack-nerd-font"
+      "font-iosevka-nerd-font"
       "hiddenbar"
       "iterm2"
       "raycast"

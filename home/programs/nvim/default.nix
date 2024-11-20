@@ -1,6 +1,8 @@
+{ pkgs, ... }:
 {
   imports = [
     ./colorscheme.nix
+    ./copilot.nix
     ./cmp.nix
     ./git.nix
     ./keymaps.nix
@@ -29,7 +31,7 @@
     plugins.comment.enable = true;
     plugins.cursorline = {
       enable = true;
-      cursorline.timeout = 0;
+      # cursorline.timeout = 0;
     };
     plugins.marks.enable = true;
     plugins.vim-surround.enable = true;

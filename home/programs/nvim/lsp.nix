@@ -5,29 +5,33 @@
 
       servers = {
         dockerls.enable = true;
-        efm.enable = true;
+        # efm.enable = true; # general purpose language server
         elmls.enable = true;
         gleam.enable = true;
         gopls.enable = true;
         graphql.enable = true;
-        hls.enable = true;
+        hls = {
+          enable = true;
+          installGhc = false; # set to true to install ghc automatically
+        };
+        # jedi_language_server.enable = true;
         jsonls.enable = true;
         marksman.enable = true;
-        nil-ls = {
+        nil_ls = {
           enable = true;
           settings.formatting.command = [ "nixfmt" ];
         };
-        lua-ls.enable = true;
-        ocamllsp.enable = true;
+        lua_ls.enable = true;
+        # ocamllsp.enable = true;
         pyright.enable = true;
-        ts-ls.enable = true;
-        ruff-lsp.enable = true;
-        rust-analyzer = {
+        ts_ls.enable = true;
+        ruff.enable = true;
+        rust_analyzer = {
           enable = true;
           installCargo = true;
           installRustc = true;
         };
-        vuels.enable = true;
+        # vuels.enable = true;
         yamlls.enable = true;
       };
 
@@ -53,7 +57,10 @@
       "<leader>cS" = "lsp_document_symbols";
       "<leader>ci" = "lsp_implementations";
       "<leader>cD" = "lsp_definitions";
+      "<leader>cr" = "lsp_references";
       "<leader>ct" = "lsp_type_definitions";
+      "<leader>cic" = "lsp_incoming_calls";
+      "<leader>coc" = "lsp_outgoing_calls";
       "<leader>pS" = "lsp_workspace_symbols";
     };
 
