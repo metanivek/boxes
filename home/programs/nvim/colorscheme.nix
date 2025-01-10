@@ -1,14 +1,21 @@
 {
   programs.nixvim = {
-    colorschemes.nightfox = {
+    colorschemes.catppuccin = {
       enable = true;
-      flavor = "carbonfox";
+      settings = {
+        flavour = "mocha";
+        integrations = {
+          gitsigns = true;
+          native_lsp.enabled = true;
+          telescope = true;
+          treesitter = true;
+          which_key = true;
+        };
+      };
     };
-    # colorschemes.modus = {
-    #   enable = true;
-    #   settings = {
-    #     style = "modus_vivendi";
-    #   };
-    # };
+
+    plugins.lualine.settings.options = {
+      theme = "catppuccin";
+    };
   };
 }
