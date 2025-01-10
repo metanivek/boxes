@@ -11,7 +11,7 @@
 
     plugins.gitmessenger = {
       enable = true;
-      includeDiff = "current";
+      settings.includeDiff = "current";
     };
 
     plugins.neogit = {

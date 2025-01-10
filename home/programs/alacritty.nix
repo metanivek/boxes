@@ -6,10 +6,11 @@
     enable = true;
 
     settings = {
-      # import = [ "${pkgs.alacritty-theme}/kanagawa_wave.toml" ];
-      import = [ "${pkgs.alacritty-theme}/tomorrow_night_bright.toml" ];
-
-      working_directory = config.home.homeDirectory;
+      general = {
+        # import = [ "${pkgs.alacritty-theme}/kanagawa_wave.toml" ];
+        import = [ "${pkgs.alacritty-theme}/tomorrow_night_bright.toml" ];
+        working_directory = config.home.homeDirectory;
+      };
 
       env = {
         TERM = "xterm-256color";
