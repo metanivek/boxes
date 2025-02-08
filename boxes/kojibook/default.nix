@@ -4,10 +4,18 @@ let
   inherit (inputs) nixpkgs;
   inherit (inputs.nix-darwin.lib) darwinSystem;
   inherit (inputs.home-manager.lib) homeManagerConfiguration;
+  system = "aarch64-darwin";
+  pkgs = import nixpkgs {
+    inherit system;
+    config = {
+      allowUnfree = true;
+      allowUnfreePredicate = _: true;
+    };
+  };
 in
 {
-
   darwinConfigurations.kojibook = darwinSystem {
+    inherit pkgs;
     specialArgs = {
       inherit username;
     };
@@ -15,17 +23,15 @@ in
       ./configuration.nix
       {
         nixpkgs.config.allowUnfree = true;
-        nixpkgs.hostPlatform = "aarch64-darwin";
+        nixpkgs.config.allowUnfreePredicate = _: true;
+        nixpkgs.hostPlatform = system;
         system.configurationRevision = rev;
       }
     ];
   };
 
   homeConfigurations.${username} = homeManagerConfiguration {
-    pkgs = import nixpkgs {
-      system = "aarch64-darwin";
-      config.allowUnfree = true;
-    };
+    inherit pkgs;
     extraSpecialArgs = {
       inherit username;
       inherit inputs;

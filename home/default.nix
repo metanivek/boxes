@@ -7,10 +7,13 @@
     ./programs
   ];
 
+  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfreePredicate = _: true;
+
   home.stateVersion = "24.05";
   programs.home-manager.enable = true;
 
   home.packages = [
-    pkgs.wget 
+    pkgs.wget
   ];
 }
