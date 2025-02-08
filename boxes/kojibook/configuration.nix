@@ -126,7 +126,7 @@
         magnification = false;
         mineffect = "scale";
         minimize-to-application = true;
-        orientation = "bottom";
+        orientation = "left";
         showhidden = false;
         show-recents = false;
         tilesize = 44;
