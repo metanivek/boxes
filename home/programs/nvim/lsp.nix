@@ -5,7 +5,7 @@
 
       servers = {
         dockerls.enable = true;
-        # efm.enable = true; # general purpose language server
+        efm.enable = true; # general purpose language server
         elmls.enable = true;
         gleam.enable = true;
         gopls.enable = true;
@@ -37,7 +37,14 @@
 
       inlayHints = true;
 
+      preConfig = ''
+        local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+      '';
+
       onAttach = ''
+        if client.server_capabilities.textDocumentSync and client.server_capabilities.textDocumentSync.willSaveWaitUntil then
+          client.server_capabilities.textDocumentSync.willSaveWaitUntil = nil
+        end
         -- Auto-format on save {{{
           if client.supports_method("textDocument/formatting") then
             vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
@@ -45,7 +52,7 @@
               group = augroup,
               buffer = bufnr,
               callback = function()
-                vim.lsp.buf.format()
+                vim.lsp.buf.format({bufnr = bufnr, id = client.id})
               end,
             })
           end
@@ -64,9 +71,9 @@
       "<leader>pS" = "lsp_workspace_symbols";
     };
 
-    plugins.lsp-format = {
-      enable = true;
-    };
+    # plugins.lsp-format = {
+    #   enable = true;
+    # };
 
     plugins.none-ls = {
       enable = true;
