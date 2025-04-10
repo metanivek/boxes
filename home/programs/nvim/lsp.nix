@@ -5,7 +5,7 @@
 
       servers = {
         dockerls.enable = true;
-        efm.enable = true; # general purpose language server
+        # efm.enable = true; # general purpose language server
         elmls.enable = true;
         gleam.enable = true;
         gopls.enable = true;
@@ -33,6 +33,7 @@
         };
         # vuels.enable = true;
         yamlls.enable = true;
+        zls.enable = true;
       };
 
       inlayHints = true;

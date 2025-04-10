@@ -18,6 +18,7 @@
     docker-compose
     dust
     editorconfig-core-c
+    entr
     gawk
     gh
     fd
@@ -80,6 +81,7 @@
       "font-fira-code-nerd-font"
       "font-hack-nerd-font"
       "font-iosevka-nerd-font"
+      "ghostty"
       "hiddenbar"
       "iterm2"
       "raycast"

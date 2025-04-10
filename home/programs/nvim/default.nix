@@ -38,6 +38,10 @@
     plugins.web-devicons.enable = true;
     plugins.zen-mode.enable = true;
 
+    extraPlugins = with pkgs.vimPlugins; [
+      vim-abolish
+    ];
+
     opts = {
       autoindent = true;
       background = "dark";
