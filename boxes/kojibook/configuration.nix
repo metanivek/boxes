@@ -10,6 +10,10 @@
     shell = pkgs.zsh;
   };
 
+  # to prevent complete rebuild set old GID default
+  # new default is 30000
+  ids.gids.nixbld = 350;
+
   environment.systemPackages = with pkgs; [
     aspell
     colima
@@ -94,7 +98,7 @@
   };
 
   services = {
-    nix-daemon.enable = true;
+    # nix-daemon.enable = true; # not needed?
     lorri.enable = true;
   };
 
@@ -111,6 +115,10 @@
   };
 
   system = {
+    # apparently stuff is migrating aspects of darwin-rebuild but
+    # this is the workaround until that is complete
+    primaryUser = username;
+
     # Used for backwards compatibility, check changelog before changing.
     # $ darwin-rebuild changelog
     stateVersion = 4;

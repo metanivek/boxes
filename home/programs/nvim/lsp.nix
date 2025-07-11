@@ -9,7 +9,7 @@
         elmls.enable = true;
         gleam.enable = true;
         gopls.enable = true;
-        graphql.enable = true;
+        # graphql.enable = true; # not available after update. TODO look into this
         hls = {
           enable = true;
           installGhc = false; # set to true to install ghc automatically
