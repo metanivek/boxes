@@ -11,7 +11,7 @@
       ];
     };
 
-    initExtra = ''
+    initContent = ''
       # use emacs keys for navigating command prompt
       bindkey -e
     '';
