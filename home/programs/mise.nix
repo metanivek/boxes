@@ -3,9 +3,10 @@
     enable = true;
     globalConfig = {
       tools = {
-        node = "20";
-        python = "latest";
         go = "latest";
+        node = "20";
+        opam = "latest";
+        python = "latest";
         rust = "1.88.0";
         "cargo:https://github.com/kejadlen/jj" = {
           bin = "jj";

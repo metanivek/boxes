@@ -14,26 +14,6 @@
     sensibleOnTop = false;
     terminal = "tmux-256color";
     plugins = with pkgs.tmuxPlugins; [
-      # {
-      #   plugin = mkTmuxPlugin {
-      #     pluginName = "kanagawa";
-      #     version = "unstable-2024-07-06";
-      #     src = pkgs.fetchFromGitHub {
-      #       owner = "Nybkox";
-      #       repo = "tmux-kanagawa";
-      #       rev = "fc95d797ba24536bffe3f2b2101e7d7ec3e5aaa1";
-      #       sha256 = "1d00hhsjv8s00f5a722xpbvzs9780zp55hqzkc0fkapvnig2la5w";
-      #     };
-      #   };
-      #   extraConfig = ''
-      #     set -g @kanagawa-left-icon session
-      #     set -g @kanagawa-show-flags true
-      #     set -g @kanagawa-show-location false
-      #     set -g @kanagawa-time-format "%H:%M"
-      #     set -g @kanagawa-plugins "battery cpu time"
-      #     set -g @kanagawa-show-powerline true
-      #   '';
-      # }
       {
         plugin = session-wizard;
         extraConfig = ''

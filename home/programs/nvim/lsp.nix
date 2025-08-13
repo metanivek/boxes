@@ -22,7 +22,7 @@
           settings.formatting.command = [ "nixfmt" ];
         };
         lua_ls.enable = true;
-        # ocamllsp.enable = true;
+        ocamllsp.enable = true;
         pyright.enable = true;
         ts_ls.enable = true;
         ruff.enable = true;
