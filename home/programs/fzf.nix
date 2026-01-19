@@ -8,7 +8,7 @@
 
   programs.zsh = {
     antidote.plugins = [ "Aloxaf/fzf-tab" ];
-    initExtra = ''
+    initContent = ''
       #
       # fzf-tab configuration
       #

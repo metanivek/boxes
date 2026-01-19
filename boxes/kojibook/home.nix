@@ -3,7 +3,7 @@
 
   programs.zsh = {
     antidote.plugins = [ "jscutlery/nx-completion" ];
-    initExtra = ''
+    initContent = ''
       # homebrew
       eval "$(/opt/homebrew/bin/brew shellenv)"
 
