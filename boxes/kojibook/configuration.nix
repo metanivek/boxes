@@ -71,7 +71,7 @@
     ];
     brews = [
       # TODO can i manage emacs with nix?
-      "emacs-plus@29"
+      "emacs-plus@30"
       # libtool is required to build vterm in emacs
       # TODO figure out how to manage this with nix
       "libtool"
