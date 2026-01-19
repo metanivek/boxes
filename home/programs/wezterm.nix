@@ -1,6 +1,6 @@
 {
   programs.wezterm = {
-    enable = true;
+    enable = false;
 
     extraConfig = ''
       local config = wezterm.config_builder()

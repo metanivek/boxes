@@ -90,7 +90,6 @@
       "iterm2"
       "raycast"
       "swiftbar"
-      "wezterm"
     ];
     masApps = {
       "Xcode" = 497799835;
