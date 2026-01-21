@@ -4,7 +4,6 @@
     clippy
     deadnix
     lua54Packages.luacheck
-    nodePackages.jsonlint
     python311Packages.bandit
     python311Packages.mypy
     python311Packages.pycodestyle
@@ -19,7 +18,7 @@
     plugins.lint = {
       enable = true;
       lintersByFt = {
-        json = [ "jsonlint" ];
+        json = [ ];
         lua = [ "luacheck" ];
         markdown = [ "vale" ];
         nix = [

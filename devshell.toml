@@ -2,7 +2,7 @@
 name = "📦"
 
 packages = [
-  "nixfmt-rfc-style",
+  "nixfmt",
   "nil"
 ]
 

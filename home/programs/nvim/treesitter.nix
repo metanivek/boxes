@@ -86,9 +86,8 @@
         trim_scope = "outer";
       };
     };
-    plugins.treesitter-refactor = {
-      enable = true;
-      # navigation.enable = true;
-    };
+    # treesitter-refactor is deprecated and incompatible with current nvim-treesitter
+    # see: https://github.com/nvim-treesitter/nvim-treesitter-refactor
+    # replacement (nvim-treesitter-locals) is not yet ready
   };
 }

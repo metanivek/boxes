@@ -6,8 +6,6 @@
   ];
   programs.git = {
     enable = true;
-    userName = "Kevin Smith";
-    userEmail = "metanivek@gmail.com";
     lfs.enable = true;
     signing.signByDefault = true;
     ignores = [
@@ -15,7 +13,11 @@
       "*.local"
       ".DS_Store"
     ];
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Kevin Smith";
+        email = "metanivek@gmail.com";
+      };
       color.ui = "auto";
       branch.sort = "-committerdate";
       commit.gpgSign = true;
@@ -36,16 +38,16 @@
       interactive.diffFilter = "delta --color-only";
       merge.conflictStyle = "diff3";
       diff.colorMoved = "default";
-    };
-    aliases = {
-      br = "branch";
-      ci = "commit";
-      co = "checkout";
-      lo = "! f() { git log --no-color --no-decorate | bat -n -l 'Git log' ; }; f";
-      lol = "log --graph --decorate --pretty=oneline --abbrev-commit";
-      lola = "log --graph --decorate --pretty=oneline --abbrev-commit --all";
-      me = "!sh -c 'echo \"$(git config user.name) <$(git config user.email)>\"'";
-      st = "status";
+      aliases = {
+        br = "branch";
+        ci = "commit";
+        co = "checkout";
+        lo = "! f() { git log --no-color --no-decorate | bat -n -l 'Git log' ; }; f";
+        lol = "log --graph --decorate --pretty=oneline --abbrev-commit";
+        lola = "log --graph --decorate --pretty=oneline --abbrev-commit --all";
+        me = "!sh -c 'echo \"$(git config user.name) <$(git config user.email)>\"'";
+        st = "status";
+      };
     };
   };
 }
