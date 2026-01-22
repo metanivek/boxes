@@ -7,7 +7,7 @@
     escapeTime = 10;
     aggressiveResize = true;
     keyMode = "vi";
-    # baseIndex = 1; # breaks some scripts smh
+    baseIndex = 1;
     clock24 = true;
     mouse = true;
     historyLimit = 100000;
