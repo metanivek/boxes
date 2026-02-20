@@ -15,6 +15,17 @@
     terminal = "tmux-256color";
     plugins = with pkgs.tmuxPlugins; [
       {
+        plugin = resurrect;
+        extraConfig = "set -g @resurrect-processes 'false'";
+      }
+      {
+        plugin = continuum;
+        extraConfig = ''
+          set -g @continuum-restore 'on'
+          set -g @continuum-save-interval '10'
+        '';
+      }
+      {
         plugin = session-wizard;
         extraConfig = ''
           set -g @session-wizard S
