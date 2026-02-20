@@ -36,7 +36,6 @@
     k9s
     kubectl
     kubernetes-helm
-    neovim
     ranger
     shellcheck
     sops
@@ -92,14 +91,7 @@
       "raycast"
       "swiftbar"
     ];
-    masApps = {
-      "Xcode" = 497799835;
-    };
-  };
-
-  services = {
-    # nix-daemon.enable = true; # not needed?
-    lorri.enable = true;
+    masApps = { };
   };
 
   nix = {

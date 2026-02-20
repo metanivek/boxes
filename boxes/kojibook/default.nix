@@ -22,8 +22,6 @@ in
     modules = [
       ./configuration.nix
       {
-        nixpkgs.config.allowUnfree = true;
-        nixpkgs.config.allowUnfreePredicate = _: true;
         nixpkgs.hostPlatform = system;
         system.configurationRevision = rev;
       }
