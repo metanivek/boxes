@@ -12,6 +12,7 @@
       ".envrc"
       "*.local"
       ".DS_Store"
+      ".sisyphus"
     ];
     settings = {
       user = {
@@ -31,8 +32,9 @@
       # delta config + related setup
       delta = {
         hyperlinks = true;
-        navigate = true;
         line-numbers = true;
+        navigate = true;
+        side-by-side = true;
       };
       core.pager = "delta";
       interactive.diffFilter = "delta --color-only";
