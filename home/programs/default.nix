@@ -5,6 +5,7 @@
     ./direnv.nix
     ./eza.nix
     ./fzf.nix
+    ./ghostty.nix
     ./git.nix
     ./gpg.nix
     ./mise.nix
