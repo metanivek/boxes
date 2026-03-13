@@ -21,6 +21,9 @@
       alias google-config='just -d $BDEVTOOLS -f $BDEVTOOLS/justfile googleconfig'
       alias ecr-login='just -d $BDEVTOOLS -f $BDEVTOOLS/justfile ecr-login'
       alias kubeconfig='just -d $BDEVTOOLS -f $BDEVTOOLS/justfile kubeconfig'
+
+      # skillshare completions
+      source <(skillshare completion zsh)
     '';
   };
 
