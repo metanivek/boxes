@@ -66,6 +66,7 @@
       cleanup = "none"; # "zap"
     };
     taps = [
+      "anomalyco/tap"
       "d12frosted/emacs-plus"
       "homebrew/services"
     ];
@@ -75,11 +76,14 @@
       # libtool is required to build vterm in emacs
       # TODO figure out how to manage this with nix
       "libtool"
+      "opencode"
       "pinentry-mac"
     ];
     casks = [
       "1password-cli"
       "alacritty"
+      "claude-code"
+      "codex"
       "font-blex-mono-nerd-font"
       "font-fira-code"
       "font-fira-code-nerd-font"

@@ -13,8 +13,6 @@
       # add local bin
       export PATH="$HOME/.local/bin:$PATH"
 
-      # add opencode
-      export PATH="$HOME/.opencode/bin:$PATH"
 
       export BDEVTOOLS=$HOME/b/developer-tools
       alias google-login='just -d $BDEVTOOLS -f $BDEVTOOLS/justfile google'
