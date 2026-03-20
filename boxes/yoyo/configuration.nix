@@ -64,7 +64,6 @@
     taps = [
       "anomalyco/tap"
       "d12frosted/emacs-plus"
-      "homebrew/services"
     ];
     brews = [
       # TODO can i manage emacs with nix?
