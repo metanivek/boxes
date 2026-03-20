@@ -81,6 +81,7 @@
     casks = [
       "1password-cli"
       "alacritty"
+      "bitwarden"
       "claude-code"
       "codex"
       "font-blex-mono-nerd-font"
@@ -93,6 +94,7 @@
       "iterm2"
       "raycast"
       "swiftbar"
+      "tailscale-app"
     ];
     masApps = { };
   };
