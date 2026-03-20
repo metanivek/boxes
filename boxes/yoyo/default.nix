@@ -14,7 +14,7 @@ let
   };
 in
 {
-  darwinConfigurations.kojibook = darwinSystem {
+  darwinConfigurations.yoyo = darwinSystem {
     inherit pkgs;
     specialArgs = {
       inherit username;
@@ -28,7 +28,7 @@ in
     ];
   };
 
-  homeConfigurations."${username}@kojibook" = homeManagerConfiguration {
+  homeConfigurations."${username}@yoyo" = homeManagerConfiguration {
     inherit pkgs;
     extraSpecialArgs = {
       inherit username;

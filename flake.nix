@@ -51,9 +51,18 @@
           devshells.default = lib.importTOML ./devshell.toml;
         };
 
-      flake = import ./boxes/kojibook {
-        inherit inputs;
-        inherit rev;
-      };
+      flake =
+        let
+          args = {
+            inherit inputs;
+            inherit rev;
+          };
+          kojibook = import ./boxes/kojibook args;
+          yoyo = import ./boxes/yoyo args;
+        in
+        {
+          darwinConfigurations = kojibook.darwinConfigurations // yoyo.darwinConfigurations;
+          homeConfigurations = kojibook.homeConfigurations // yoyo.homeConfigurations;
+        };
     };
 }
