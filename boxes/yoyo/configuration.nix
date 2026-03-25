@@ -153,6 +153,46 @@
           DSDontWriteNetworkStores = true;
           DSDontWriteUSBStores = true;
         };
+        "com.apple.symbolichotkeys" = {
+          AppleSymbolicHotKeys = {
+            # Disable "Select previous input source" (Ctrl+Space) — tmux leader
+            "60" = {
+              enabled = false;
+              value = {
+                parameters = [
+                  32
+                  49
+                  262144
+                ];
+                type = "standard";
+              };
+            };
+            # Disable "Select next input source" (Ctrl+Cmd+Space) — Raycast emoji picker
+            "61" = {
+              enabled = false;
+              value = {
+                parameters = [
+                  32
+                  49
+                  786432
+                ];
+                type = "standard";
+              };
+            };
+            # Disable "Show Spotlight Search" (Cmd+Space) — Raycast launcher
+            "64" = {
+              enabled = false;
+              value = {
+                parameters = [
+                  65535
+                  49
+                  1048576
+                ];
+                type = "standard";
+              };
+            };
+          };
+        };
         "com.apple.AdLib".allowApplePersonalizedAdvertising = false;
       };
     };
