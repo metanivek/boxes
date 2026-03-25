@@ -112,6 +112,7 @@
         AppleShowAllExtensions = true;
         NSAutomaticCapitalizationEnabled = false;
         NSAutomaticSpellingCorrectionEnabled = false;
+        "com.apple.swipescrolldirection" = false; # disable natural scroll
         "com.apple.trackpad.enableSecondaryClick" = true;
       };
 
