@@ -71,7 +71,7 @@
       # libtool is required to build vterm in emacs
       # TODO figure out how to manage this with nix
       "libtool"
-      "opencode"
+      "anomalyco/tap/opencode"
       "pinentry-mac"
     ];
     casks = [
