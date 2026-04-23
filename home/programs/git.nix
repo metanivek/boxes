@@ -40,15 +40,30 @@
       interactive.diffFilter = "delta --color-only";
       merge.conflictStyle = "diff3";
       diff.colorMoved = "default";
-      aliases = {
+      alias = {
+        ap = "add --patch";
         br = "branch";
+        ca = "commit --amend";
+        can = "commit --amend --no-edit";
         ci = "commit";
+        cleanup = "!git branch --merged main | grep -vE '^\\*|^[[:space:]]*main$' | xargs -n 1 git branch -d";
+        cm = "commit -m";
         co = "checkout";
+        d = "diff";
+        dc = "diff --cached";
+        find = "!git log --all --oneline -S";
+        last = "log -1 HEAD";
         lo = "! f() { git log --no-color --no-decorate | bat -n -l 'Git log' ; }; f";
         lol = "log --graph --decorate --pretty=oneline --abbrev-commit";
         lola = "log --graph --decorate --pretty=oneline --abbrev-commit --all";
         me = "!sh -c 'echo \"$(git config user.name) <$(git config user.email)>\"'";
+        nuke = "reset --hard HEAD";
+        pf = "push --force-with-lease";
+        pr = "pull --rebase";
+        root = "rev-parse --show-toplevel";
         st = "status";
+        undo = "reset --soft HEAD~1";
+        unstage = "reset HEAD --";
       };
     };
   };
