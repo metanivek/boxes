@@ -4,8 +4,7 @@
       enable = true;
       enableTelescope = true;
       settings = {
-        #detection_methods = [ "lsp" "pattern" ];
-        detection_methods = [ "pattern" ];
+        use_lsp = false;
         patterns = [ ".git" ];
       };
     };

@@ -11,6 +11,7 @@
     clock24 = true;
     mouse = true;
     historyLimit = 100000;
+    focusEvents = true;
     sensibleOnTop = false;
     terminal = "tmux-256color";
     plugins = with pkgs.tmuxPlugins; [
