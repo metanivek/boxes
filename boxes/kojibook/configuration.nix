@@ -82,7 +82,7 @@
       "1password-cli"
       "alacritty"
       "bitwarden"
-      "claude-code"
+      "claude-code@latest"
       "codex"
       "font-blex-mono-nerd-font"
       "font-fira-code"

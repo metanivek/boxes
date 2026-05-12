@@ -107,6 +107,12 @@ let
       action = "<cmd>confirm quitall<cr><esc>";
       desc = "Quit all";
     }
+    # toggle
+    {
+      key = "<leader>ow";
+      action = "<cmd>set wrap!<cr>";
+      desc = "Toggle soft wrap";
+    }
   ];
 in
 {
