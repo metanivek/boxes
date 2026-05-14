@@ -70,6 +70,7 @@
       "d12frosted/emacs-plus"
     ];
     brews = [
+      "ast-grep"
       # TODO can i manage emacs with nix?
       "emacs-plus@30"
       # libtool is required to build vterm in emacs
