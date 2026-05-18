@@ -4,10 +4,10 @@
     clippy
     deadnix
     lua54Packages.luacheck
-    python311Packages.bandit
-    python311Packages.mypy
-    python311Packages.pycodestyle
-    python311Packages.vulture
+    python312Packages.bandit
+    python312Packages.mypy
+    python312Packages.pycodestyle
+    python312Packages.vulture
     ruff
     shellcheck
     vale
