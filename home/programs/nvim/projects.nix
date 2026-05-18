@@ -4,7 +4,7 @@
       enable = true;
       enableTelescope = true;
       settings = {
-        use_lsp = false;
+        lsp.enabled = false;
         patterns = [ ".git" ];
       };
     };
