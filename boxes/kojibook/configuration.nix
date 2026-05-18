@@ -10,6 +10,11 @@
     shell = pkgs.zsh;
   };
 
+  system.keyboard = {
+    enableKeyMapping = true;
+    remapCapsLockToControl = true;
+  };
+
   # to prevent complete rebuild set old GID default
   # new default is 30000
   ids.gids.nixbld = 350;

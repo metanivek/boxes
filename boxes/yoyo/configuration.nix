@@ -10,6 +10,11 @@
     shell = pkgs.zsh;
   };
 
+  system.keyboard = {
+    enableKeyMapping = true;
+    remapCapsLockToControl = true;
+  };
+
   environment.systemPackages = with pkgs; [
     aspell
     ast-grep
