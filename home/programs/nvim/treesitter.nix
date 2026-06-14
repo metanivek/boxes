@@ -38,6 +38,7 @@
           "json5"
           "just"
           "kotlin"
+          "lean"
           "lua"
           "luadoc"
           "make"

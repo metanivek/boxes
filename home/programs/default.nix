@@ -8,6 +8,7 @@
     ./ghostty.nix
     ./git.nix
     ./gpg.nix
+    ./lean.nix
     ./mise.nix
     ./nvim
     ./ripgrep.nix

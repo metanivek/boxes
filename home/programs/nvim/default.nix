@@ -6,6 +6,7 @@
     ./cmp.nix
     ./git.nix
     ./keymaps.nix
+    ./lean.nix
     ./neo-tree.nix
     ./projects.nix
     ./lint.nix
