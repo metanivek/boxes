@@ -4,7 +4,7 @@
     globalConfig = {
       tools = {
         go = "latest";
-        node = "20";
+        node = "24";
         opam = "latest";
         python = "latest";
         rust = "latest";

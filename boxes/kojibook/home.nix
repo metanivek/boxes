@@ -25,10 +25,6 @@
     '';
   };
 
-  programs.mise.globalConfig.tools = {
-    postgres = "14.10";
-  };
-
   programs.git = {
     signing.key = "95543858";
     includes = [
