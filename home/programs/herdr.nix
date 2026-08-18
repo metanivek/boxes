@@ -35,22 +35,13 @@ let
       new_cwd = "follow";
     };
 
-    theme = {
-      name = "terminal";
-      custom = {
-        panel_bg = "black";
-        text = "white";
-        accent = "green";
-      };
-    };
-
     ui = {
       mouse_capture = true;
       copy_on_select = true;
       tab_bar_position = "bottom";
       prompt_new_tab_name = false;
       pane_borders = true;
-      pane_gaps = false;
+      pane_gaps = true;
       pane_scrollbars = false;
       sidebar_start_collapsed = true;
       sidebar_collapsed_mode = "hidden";
