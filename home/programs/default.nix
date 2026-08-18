@@ -9,6 +9,7 @@
     ./git.nix
     ./gpg.nix
     ./lean.nix
+    ./herdr.nix
     ./mise.nix
     ./nvim
     ./ripgrep.nix
