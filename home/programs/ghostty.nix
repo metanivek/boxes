@@ -13,6 +13,7 @@
 
       macos-titlebar-style = "hidden";
       maximize = true;
+      window-decoration = false;
       window-padding-x = 0;
       window-padding-y = 0;
       macos-option-as-alt = true;
