@@ -10,6 +10,12 @@
     shell = pkgs.zsh;
   };
 
+  networking = {
+    computerName = "kojibook";
+    localHostName = "kojibook";
+    hostName = "kojibook";
+  };
+
   system.keyboard = {
     enableKeyMapping = true;
     remapCapsLockToControl = true;

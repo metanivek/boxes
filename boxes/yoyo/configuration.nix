@@ -10,6 +10,12 @@
     shell = pkgs.zsh;
   };
 
+  networking = {
+    computerName = "yoyo";
+    localHostName = "yoyo";
+    hostName = "yoyo";
+  };
+
   system.keyboard = {
     enableKeyMapping = true;
     remapCapsLockToControl = true;

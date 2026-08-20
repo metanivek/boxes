@@ -13,9 +13,5 @@
         };
       };
     };
-
-    plugins.lualine.settings.options = {
-      theme = "catppuccin";
-    };
   };
 }
