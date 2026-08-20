@@ -1,5 +1,8 @@
 {
-  imports = [ ../../home ];
+  imports = [
+    ../../home
+    ./collie.nix
+  ];
 
   programs.zsh = {
     antidote.plugins = [ "jscutlery/nx-completion" ];

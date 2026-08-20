@@ -1,4 +1,9 @@
-{ inputs, rev, ... }:
+{
+  herdrColliePackage,
+  inputs,
+  rev,
+  ...
+}:
 let
   username = "metanivek";
   inherit (inputs) nixpkgs;
@@ -31,6 +36,7 @@ in
   homeConfigurations."${username}@yoyo" = homeManagerConfiguration {
     inherit pkgs;
     extraSpecialArgs = {
+      inherit herdrColliePackage;
       inherit username;
       inherit inputs;
     };

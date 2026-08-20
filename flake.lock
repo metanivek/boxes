@@ -1,5 +1,22 @@
 {
   "nodes": {
+    "collie": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1787145721,
+        "narHash": "sha256-3YeinrwX4Z4+m1LqF3Ngb24lPEb7S4UphZUDt6vsmhk=",
+        "owner": "AltanS",
+        "repo": "collie",
+        "rev": "c345ccdfbc55d974dc08ed0dc6c95cabacd280b1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AltanS",
+        "ref": "v0.32.0",
+        "repo": "collie",
+        "type": "github"
+      }
+    },
     "devshell": {
       "inputs": {
         "nixpkgs": "nixpkgs"
@@ -74,6 +91,40 @@
         "owner": "herdrdev",
         "ref": "v0.8.0",
         "repo": "herdr",
+        "type": "github"
+      }
+    },
+    "herdr-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1786633944,
+        "narHash": "sha256-8rauWsiFvp847ku4OCrhECQGoQUUiZdKOZtjQ2xShYg=",
+        "owner": "ChmaraX",
+        "repo": "herdr-nvim",
+        "rev": "40aadeab3cef3702ef5e05069181c7168084794f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ChmaraX",
+        "repo": "herdr-nvim",
+        "rev": "40aadeab3cef3702ef5e05069181c7168084794f",
+        "type": "github"
+      }
+    },
+    "herdr-plugin-gh-pr": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1784237871,
+        "narHash": "sha256-N/8MolaNsr8+XRYJYV5xGDmPbmX7fd8CzbzHRy1ONoM=",
+        "owner": "wyattjoh",
+        "repo": "herdr-plugin-gh-pr",
+        "rev": "6fe22de9a90c569f2186595cfddc3707f55ba1bd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "wyattjoh",
+        "ref": "v0.4.0",
+        "repo": "herdr-plugin-gh-pr",
         "type": "github"
       }
     },
@@ -204,9 +255,12 @@
     },
     "root": {
       "inputs": {
+        "collie": "collie",
         "devshell": "devshell",
         "flake-parts": "flake-parts",
         "herdr": "herdr",
+        "herdr-nvim": "herdr-nvim",
+        "herdr-plugin-gh-pr": "herdr-plugin-gh-pr",
         "home-manager": "home-manager",
         "nix-darwin": "nix-darwin",
         "nixpkgs": "nixpkgs_2",

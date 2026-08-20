@@ -5,6 +5,7 @@
     ./copilot.nix
     ./cmp.nix
     ./git.nix
+    ./herdr.nix
     ./keymaps.nix
     ./lean.nix
     ./neo-tree.nix
