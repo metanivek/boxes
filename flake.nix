@@ -10,6 +10,10 @@
       url = "github:wyattjoh/herdr-plugin-gh-pr/v0.4.0";
       flake = false;
     };
+    herdr-automatic-rename = {
+      url = "github:qu8n/herdr-automatic-rename/v0.7.2";
+      flake = false;
+    };
     herdr-nvim = {
       url = "github:ChmaraX/herdr-nvim/40aadeab3cef3702ef5e05069181c7168084794f";
       flake = false;

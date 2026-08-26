@@ -94,6 +94,23 @@
         "type": "github"
       }
     },
+    "herdr-automatic-rename": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1787273528,
+        "narHash": "sha256-diNGS/lOEwjB1vfWrUHhmXy66tkEdGDtk/+AFUpEH5w=",
+        "owner": "qu8n",
+        "repo": "herdr-automatic-rename",
+        "rev": "8bb0db78822e9f6dbb137eb9d425b8907db45d05",
+        "type": "github"
+      },
+      "original": {
+        "owner": "qu8n",
+        "ref": "v0.7.2",
+        "repo": "herdr-automatic-rename",
+        "type": "github"
+      }
+    },
     "herdr-nvim": {
       "flake": false,
       "locked": {
@@ -259,6 +276,7 @@
         "devshell": "devshell",
         "flake-parts": "flake-parts",
         "herdr": "herdr",
+        "herdr-automatic-rename": "herdr-automatic-rename",
         "herdr-nvim": "herdr-nvim",
         "herdr-plugin-gh-pr": "herdr-plugin-gh-pr",
         "home-manager": "home-manager",

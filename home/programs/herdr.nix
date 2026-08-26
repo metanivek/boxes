@@ -8,6 +8,7 @@
 let
   herdrPackage = inputs.herdr.packages.${pkgs.stdenv.hostPlatform.system}.default;
   herdrGhPrPlugin = inputs.herdr-plugin-gh-pr;
+  herdrAutomaticRenamePlugin = inputs.herdr-automatic-rename;
   herdrNvimPackage = pkgs.rustPlatform.buildRustPackage {
     pname = "herdr-nvim";
     version = "0.1.1";
@@ -142,6 +143,7 @@ in
     herdrPackage
     pkgs.bun
     pkgs.gh
+    pkgs.jq
   ];
 
   home.activation.herdrGhPrPlugin = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
@@ -150,6 +152,14 @@ in
 
   home.activation.herdrNvimPlugin = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     ${lib.getExe herdrPackage} plugin link ${pluginRoot}
+  '';
+
+  home.activation.herdrAutomaticRenamePlugin = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    ${lib.getExe herdrPackage} plugin link ${herdrAutomaticRenamePlugin}
+  '';
+
+  programs.zsh.initContent = lib.mkAfter ''
+    source ${herdrAutomaticRenamePlugin}/shell/hook.zsh
   '';
 
   xdg.configFile."herdr/config.toml" = {
